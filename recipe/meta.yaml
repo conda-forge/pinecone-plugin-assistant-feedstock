@@ -1,5 +1,5 @@
 {% set name = "pinecone-plugin-assistant" %}
-{% set version = "3.0.2" %}
+{% set version = "3.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pinecone_plugin_assistant-{{ version }}.tar.gz
-  sha256: 04163af282ad7895b581ab89f850ed139e4ddcea72010cadfa4c573759d5c896
+  sha256: 53f548ede60a95d79ff48d7865a3d0afd665ced9e77758272e62ba0c6c63bd26
 
 build:
   noarch: python
