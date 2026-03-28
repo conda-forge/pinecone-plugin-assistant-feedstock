@@ -22,19 +22,17 @@ requirements:
   run:
     - python >={{ python_min }},<4.0.0
     - requests >=2.32.3,<3.0.0
-    - packaging >=24.2.0,<25.0.0
 
 test:
   imports:
-    # can't reliably do an import test because this would
-    # rely on pinecone itself, which would introduce a circular
-    # dependency
-    # - pinecone_plugins.assistant
+    - pinecone_plugins.assistant
   commands:
     - pip check
   requires:
     - python {{ python_min }}
     - pip
+    # beware of potential circular dependency
+    - pinecone
 
 about:
   home: https://www.pinecone.io
