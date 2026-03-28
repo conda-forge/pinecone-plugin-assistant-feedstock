@@ -27,11 +27,20 @@ requirements:
     - requests >=2.32.3,<3.0.0
 
 tests:
-  - python:
-      imports:
-        - pinecone_plugins.assistant
-      pip_check: true
-      python_version: ${{ python_min }}
+  - script:
+      interpreter: python
+      content: |
+        import pinecone_plugins.assistant
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pinecone
+  - script:
+      - python -m pip check
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
 
 about:
   summary: Assistant plugin for Pinecone SDK
